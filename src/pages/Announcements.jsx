@@ -1,10 +1,31 @@
 import { useState } from "react";
 
 const events = [
-  { date: "2026-07-06", title: "Sunday Service" },
-  { date: "2026-07-13", title: "Sunday Service" },
+  { date: "2026-07-05", title: "Sunday Service" },
+  { date: "2026-07-12", title: "Sunday Service" },
+  { date: "2026-07-17", title: "Food Pantry" },
   { date: "2026-07-18", title: "Fish Fry" },
-  { date: "2026-09-28", title: "85th Church Anniversary" },
+  { date: "2026-07-20", title: "Outdoor Revival" },
+  { date: "2026-07-21", title: "Outdoor Revival" },
+  { date: "2026-07-22", title: "Outdoor Revival" },
+  { date: "2026-07-23", title: "Outdoor Revival" },
+  { date: "2026-07-24", title: "Outdoor Revival" },
+  {
+    date: "2026-09-25",
+    title: "Pastors 31st Anniversary and Retirement Celebration",
+  },
+  {
+    date: "2026-09-26",
+    title: "Pastors 31st Anniversary and Retirement Celebration",
+  },
+  {
+    date: "2026-09-27",
+    title: "Pastors 31st Anniversary and Retirement Celebration",
+  },
+  {
+    date: "2026-11-15",
+    title: "85th Church Anniversary",
+  },
 ];
 
 const announcements = [
@@ -17,8 +38,8 @@ const announcements = [
   {
     id: 2,
     date: "2026-07-01",
-    title: "Announcement Title Here",
-    body: "Announcement details go here. Replace with real content when available.",
+    title: "Outdoor Revival",
+    body: "Outdoor Revival - Sponsored by Minister Rashaan Pace",
   },
   {
     id: 3,
@@ -27,10 +48,22 @@ const announcements = [
     body: "Whiting Dinners and Sandwiches Available $15 Dinner/$12 Sandwich",
   },
   {
-    id: 3,
-    date: "2026-09-01",
+    id: 4,
+    date: "2026-11-15",
     title: "85th Church Anniversary",
     body: "Join us as we celebrate 85 years of ministry. Details to follow.",
+  },
+  {
+    id: 5,
+    date: "2026-07-17",
+    title: "Food Pantry",
+    body: "Friday, Food Pantry 12:30pm until all food is distributed.  Open to the Community",
+  },
+  {
+    id: 6,
+    date: "2026-09-01",
+    title: "Pastors 31st Anniversary and Retirement Celebration",
+    body: "Celebrating Pastor/Elder Preston’s 31st Anniversary and Retirement. Friday: Ministers Fellowship Council will bring the service 7:30 PM; Saturday: 12 Noon-5PM, Luncheon at Eastwood Manner, 3371 Eastchester Rd, Bronx, NY. (Tickets: Adults $120, Children 12yrs. and under $$75) Sunday: Culmination Service 11AM. FDTBA. Committee Chairperson, Elder Pete Lovell.",
   },
 ];
 
