@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Media from "./pages/Media";
 import Visit from "./pages/Visit";
 import Announcements from "./pages/Announcements";
+import Beliefs from "./pages/Beliefs";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/media" element={<Media />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/announcements" element={<Announcements />} />
+          <Route path="/beliefs" element={<Beliefs />} />
         </Routes>
       </main>
       <Footer />

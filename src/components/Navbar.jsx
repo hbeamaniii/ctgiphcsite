@@ -19,8 +19,8 @@ function Navbar() {
           <Link to="/" className="hover:text-white transition">
             Home
           </Link>
-          <Link to="/visit" className="hover:text-white transition">
-            Visit
+          <Link to="/beliefs" className="hover:text-white transition">
+            Beliefs
           </Link>
           <Link to="/leadership" className="hover:text-white transition">
             Leadership
@@ -30,6 +30,9 @@ function Navbar() {
           </Link>
           <Link to="/announcements" className="hover:text-white transition">
             Announcements
+          </Link>
+          <Link to="/visit" className="hover:text-white transition">
+            Visit
           </Link>
         </div>
 
@@ -53,11 +56,11 @@ function Navbar() {
             Home
           </Link>
           <Link
-            to="/visit"
+            to="/beliefs"
             onClick={() => setIsOpen(false)}
             className="hover:text-white transition"
           >
-            Visit
+            Beliefs
           </Link>
           <Link
             to="/leadership"
@@ -79,6 +82,13 @@ function Navbar() {
             className="hover:text-white transition"
           >
             Announcements
+          </Link>
+          <Link
+            to="/visit"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-white transition"
+          >
+            Visit
           </Link>
         </div>
       )}

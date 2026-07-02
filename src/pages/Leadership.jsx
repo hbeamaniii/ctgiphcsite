@@ -16,7 +16,7 @@ function Leadership() {
           />
           <div className="mt-6 text-center">
             <p className="text-xs uppercase tracking-[0.24em] text-[#5D87A1]">
-              Senior Pastor
+              Pastor
             </p>
             <h2 className="mt-2 text-2xl font-semibold">
               Bishop Wilbert G. Preston
@@ -49,6 +49,80 @@ function Leadership() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Ministry Team */}
+      <div className="mt-12 grid gap-6 md:grid-cols-4">
+        <div className="rounded-3xl bg-white p-6 shadow-lg text-center">
+          <img
+            src="/images/florence.jpg"
+            alt="Minister"
+            className="h-24 w-24 rounded-full object-cover mx-auto"
+          />
+          <p className="mt-4 text-xs uppercase tracking-[0.24em] text-[#5D87A1]">
+            Minister
+          </p>
+          <h3 className="mt-2 text-lg font-semibold">
+            Elder Florence M. Preston
+          </h3>
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
+        </div>
+        <div className="rounded-3xl bg-white p-6 shadow-lg text-center">
+          <img
+            src="/images/pete.jpg"
+            alt="Minister"
+            className="h-24 w-24 rounded-full object-cover mx-auto"
+          />
+          <p className="mt-4 text-xs uppercase tracking-[0.24em] text-[#5D87A1]">
+            Minister
+          </p>
+          <h3 className="mt-2 text-lg font-semibold">Elder Pete Lovell</h3>
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
+        </div>
+
+        <div className="rounded-3xl bg-white p-6 shadow-lg text-center">
+          <img
+            src="/images/jason.jpg"
+            alt="Minister"
+            className="h-24 w-24 rounded-full object-cover mx-auto"
+          />
+          <p className="mt-4 text-xs uppercase tracking-[0.24em] text-[#5D87A1]">
+            Minister
+          </p>
+          <h3 className="mt-2 text-lg font-semibold">Elder Jason Sturdivant</h3>
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
+        </div>
+
+        <div className="rounded-3xl bg-white p-6 shadow-lg text-center">
+          <img
+            src="/images/ransford.jpg"
+            alt="Minister"
+            className="h-24 w-24 rounded-full object-cover mx-auto"
+          />
+          <p className="mt-4 text-xs uppercase tracking-[0.24em] text-[#5D87A1]">
+            Minister
+          </p>
+          <h3 className="mt-2 text-lg font-semibold">
+            Minister Ransford Fraser
+          </h3>
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
         </div>
       </div>
 
