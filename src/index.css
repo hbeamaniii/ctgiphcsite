@@ -7,4 +7,5 @@
   --color-stone: #f5f1e8;
   --color-bronze: #c8a96b;
   --shadow-soft: 0 20px 60px rgba(10, 24, 38, 0.12);
+  --breakpoint-md: 768px;
 }
