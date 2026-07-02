@@ -28,6 +28,9 @@ function Navbar() {
           <Link to="/media" className="hover:text-white transition">
             Media
           </Link>
+          <Link to="/announcements" className="hover:text-white transition">
+            Announcements
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -69,6 +72,13 @@ function Navbar() {
             className="hover:text-white transition"
           >
             Media
+          </Link>
+          <Link
+            to="/announcements"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-white transition"
+          >
+            Announcements
           </Link>
         </div>
       )}
