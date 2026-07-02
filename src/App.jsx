@@ -5,6 +5,7 @@ import Leadership from "./pages/Leadership";
 import Home from "./pages/Home";
 import Media from "./pages/Media";
 import Visit from "./pages/Visit";
+import Announcements from "./pages/Announcements";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/media" element={<Media />} />
           <Route path="/visit" element={<Visit />} />
+          <Route path="/announcements" element={<Announcements />} />
         </Routes>
       </main>
       <Footer />
