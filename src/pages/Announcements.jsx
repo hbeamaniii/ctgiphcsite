@@ -11,6 +11,7 @@ function Announcements() {
   const [month, setMonth] = useState(now.getMonth());
   const [selectedDate, setSelectedDate] = useState(now.getDate());
   const [filteredEvents, setFilteredEvents] = useState([]);
+  const [dateToggleOn, setDateToggleOn] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -21,6 +22,7 @@ function Announcements() {
         const res = await fetch(url);
         const data = await res.json();
         setEvents(data.items || []);
+        setFilteredEvents(data.items || []);
       } catch (err) {
         console.error("Calendar fetch error:", err);
       } finally {
@@ -97,17 +99,22 @@ function Announcements() {
               <div
                 key={i}
                 onClick={() => {
-                  day && setSelectedDate(selectedDate === day ? null : day);
-                  setFilteredEvents(
-                    events.filter((e) => {
-                      //Create a new Date based on the event start date/datetime and compare that to the selected day.
-                      //this needs some tightening but its working sort of.
-                      const d = new Date(
-                        e.start.dateTime || e.start.date + "T12:00:00",
-                      );
-                      if (d.getDate() === day) return e;
-                    }),
+                  setDateToggleOn(
+                    day && setSelectedDate(selectedDate === day ? null : day),
                   );
+                  if (!dateToggleOn && !hasEvent) setFilteredEvents(events);
+                  else {
+                    setFilteredEvents(
+                      events.filter((e) => {
+                        //Create a new Date based on the event start date/datetime and compare that to the selected day.
+                        //this needs some tightening but its working sort of.
+                        const d = new Date(
+                          e.start.dateTime || e.start.date + "T12:00:00",
+                        );
+                        if (d.getDate() === day) return e;
+                      }),
+                    );
+                  }
                 }}
                 className={`rounded-full py-2 text-sm font-medium
                 ${!day ? "" : "hover:bg-[#D5E4F2] cursor-default"}
