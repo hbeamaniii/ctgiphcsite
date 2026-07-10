@@ -9,6 +9,8 @@ function Announcements() {
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth());
+  const [selectedDate, setSelectedDate] = useState(now.getDate());
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -94,6 +96,19 @@ function Announcements() {
             return (
               <div
                 key={i}
+                onClick={() => {
+                  day && setSelectedDate(selectedDate === day ? null : day);
+                  setFilteredEvents(
+                    events.filter((e) => {
+                      //Create a new Date based on the event start date/datetime and compare that to the selected day.
+                      //this needs some tightening but its working sort of.
+                      const d = new Date(
+                        e.start.dateTime || e.start.date + "T12:00:00",
+                      );
+                      if (d.getDate() === day) return e;
+                    }),
+                  );
+                }}
                 className={`rounded-full py-2 text-sm font-medium
                 ${!day ? "" : "hover:bg-[#D5E4F2] cursor-default"}
                 ${hasEvent ? "bg-[#0A1826] text-white hover:bg-[#0A1826]" : ""}
@@ -113,7 +128,7 @@ function Announcements() {
             No events this month.
           </div>
         )}
-        {events.map((event, i) => {
+        {filteredEvents.map((event, i) => {
           const start = new Date(
             event.start.dateTime || event.start.date + "T12:00:00",
           );
@@ -124,7 +139,8 @@ function Announcements() {
                   month: "long",
                   day: "numeric",
                   year: "numeric",
-                })}
+                })}{" "}
+                - {start.toLocaleTimeString()}
               </p>
               <h2 className="mt-2 text-xl font-semibold">{event.summary}</h2>
               {event.description && (
