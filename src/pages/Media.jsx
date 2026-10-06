@@ -12,7 +12,7 @@ function Media() {
     const fetchVideos = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=6&type=video`,
+          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=12&type=video`,
         );
         const data = await response.json();
         setVideos(data.items || []);
