@@ -1,112 +1,75 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+const fullSiteLinks = [
+  { to: "/", label: "Home" },
+  { to: "/beliefs", label: "Beliefs" },
+  { to: "/leadership", label: "Leadership" },
+  { to: "/media", label: "Media" },
+  { to: "/announcements", label: "Announcements" },
+  { to: "/biblestudy", label: "Bible Study" },
+  { to: "/visit", label: "Visit" },
+];
+
+function Navbar({ studyOnly = false }) {
   const [isOpen, setIsOpen] = useState(false);
+  const links = studyOnly
+    ? [{ to: "/biblestudy", label: "Bible Study" }]
+    : fullSiteLinks;
 
   return (
-    <nav className="bg-[#0A1826] px-6 py-4 text-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between">
+    <nav className="bg-sanctuary px-6 py-4 text-white">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
         <Link
-          to="/"
-          className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D5E4F2]"
+          to={studyOnly ? "/biblestudy" : "/"}
+          className="rounded-sm text-sm font-semibold uppercase tracking-[0.2em] text-skyglass focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
         >
           Christ Temple GIPHC
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-white/80">
-          <Link to="/" className="hover:text-white transition">
-            Home
-          </Link>
-          <Link to="/beliefs" className="hover:text-white transition">
-            Beliefs
-          </Link>
-          <Link to="/leadership" className="hover:text-white transition">
-            Leadership
-          </Link>
-          <Link to="/media" className="hover:text-white transition">
-            Media
-          </Link>
-          <Link to="/announcements" className="hover:text-white transition">
-            Announcements
-          </Link>
-          <Link to="/biblestudy" className="hover:text-white transition">
-            Bible Study
-          </Link>
-          <Link to="/visit" className="hover:text-white transition">
-            Visit
-          </Link>
+        <div
+          className={`${studyOnly ? "flex" : "hidden lg:flex"} items-center gap-6 text-sm font-medium text-white/80`}
+        >
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="rounded-sm transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          className="flex lg:hidden text-white text-xl"
-          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={isOpen}
-          aria-controls={isOpen ? "site-mobile-menu" : undefined}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? "✕" : "☰"}
-        </button>
+        {!studyOnly && (
+          <button
+            type="button"
+            className="flex text-xl text-white lg:hidden"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls={isOpen ? "site-mobile-menu" : undefined}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+        )}
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
+      {!studyOnly && isOpen && (
         <div
           id="site-mobile-menu"
-          className="lg:hidden mt-4 flex flex-col gap-4 text-sm font-medium text-white/80 px-2"
+          className="mt-4 flex flex-col gap-4 px-2 text-sm font-medium text-white/80 lg:hidden"
         >
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Home
-          </Link>
-          <Link
-            to="/beliefs"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Beliefs
-          </Link>
-          <Link
-            to="/leadership"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Leadership
-          </Link>
-          <Link
-            to="/media"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Media
-          </Link>
-          <Link
-            to="/announcements"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Announcements
-          </Link>
-          <Link
-            to="/visit"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Visit
-          </Link>
-          <Link
-            to="/biblestudy"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-white transition"
-          >
-            Bible Study
-          </Link>
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={() => setIsOpen(false)}
+              className="rounded-sm transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>
