@@ -50,8 +50,8 @@ private `.env` files.
 
 The initial resources are the Bible Organization Study Guide and Biblical
 Criticism Quick Reference. They are listed without lesson dates because dates
-have not yet been assigned to them. Their PDF downloads are marked as pending
-until the files are included in this branch.
+have not yet been assigned to them. Both original PDFs are included in
+`public/notes/` and available through the View and Download links.
 
 ## Deploy the notes branch to Amplify
 

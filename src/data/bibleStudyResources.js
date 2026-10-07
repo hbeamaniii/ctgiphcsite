@@ -9,7 +9,7 @@ export const bibleStudyResources = [
     fileName: "Bible_Organization_Study_Guide.pdf",
     pageCount: 4,
     sizeBytes: 153195,
-    available: false,
+    available: true,
   },
   {
     id: "biblical-criticism",
@@ -20,6 +20,6 @@ export const bibleStudyResources = [
     fileName: "Biblical_Criticism_Quick_Reference.pdf",
     pageCount: 3,
     sizeBytes: 112373,
-    available: false,
+    available: true,
   },
 ];
