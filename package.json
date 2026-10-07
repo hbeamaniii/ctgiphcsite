@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:bible-study": "vite --mode bible-study",
     "build": "vite build",
+    "build:bible-study": "vite build --mode bible-study",
     "lint": "eslint .",
     "preview": "vite preview"
   },

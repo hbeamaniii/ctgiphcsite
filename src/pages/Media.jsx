@@ -16,7 +16,7 @@ function Media() {
         );
         const data = await response.json();
         setVideos(data.items || []);
-      } catch (err) {
+      } catch {
         setError("Failed to load videos.");
       } finally {
         setLoading(false);

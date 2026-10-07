@@ -15,7 +15,7 @@ function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-white/80">
           <Link to="/" className="hover:text-white transition">
             Home
           </Link>
@@ -31,6 +31,9 @@ function Navbar() {
           <Link to="/announcements" className="hover:text-white transition">
             Announcements
           </Link>
+          <Link to="/biblestudy" className="hover:text-white transition">
+            Bible Study
+          </Link>
           <Link to="/visit" className="hover:text-white transition">
             Visit
           </Link>
@@ -38,7 +41,11 @@ function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="flex md:hidden text-white text-xl"
+          type="button"
+          className="flex lg:hidden text-white text-xl"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
+          aria-controls={isOpen ? "site-mobile-menu" : undefined}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "✕" : "☰"}
@@ -47,7 +54,10 @@ function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 flex flex-col gap-4 text-sm font-medium text-white/80 px-2">
+        <div
+          id="site-mobile-menu"
+          className="lg:hidden mt-4 flex flex-col gap-4 text-sm font-medium text-white/80 px-2"
+        >
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
@@ -89,6 +99,13 @@ function Navbar() {
             className="hover:text-white transition"
           >
             Visit
+          </Link>
+          <Link
+            to="/biblestudy"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-white transition"
+          >
+            Bible Study
           </Link>
         </div>
       )}
