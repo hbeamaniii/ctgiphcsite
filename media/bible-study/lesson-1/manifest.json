@@ -1,0 +1,127 @@
+{
+  "fileName": "Bible_Study_Lesson_1.mp4",
+  "sizeBytes": 99902097,
+  "sha256": "9109a5e634361065805573bbd4e6b2310c54959c63deae1dc76eda3c71172286",
+  "parts": [
+    {
+      "fileName": "part-000.bin",
+      "sizeBytes": 4194304,
+      "sha256": "1fcb681236c5f114903d3df079332c258104f3a6b6c41cf367ffed2bb3c18538"
+    },
+    {
+      "fileName": "part-001.bin",
+      "sizeBytes": 4194304,
+      "sha256": "a615c9db76b3eea8e81f44f4235dd94c72caab44e928036f43226f440c80a190"
+    },
+    {
+      "fileName": "part-002.bin",
+      "sizeBytes": 4194304,
+      "sha256": "66178e8d904027a5094b1306a8d1efb97174a834f5e43ec4def0f79e309ab411"
+    },
+    {
+      "fileName": "part-003.bin",
+      "sizeBytes": 4194304,
+      "sha256": "6794517859a0362e08d3f803048222efc77086c66ba26469114b401e7a99f255"
+    },
+    {
+      "fileName": "part-004.bin",
+      "sizeBytes": 4194304,
+      "sha256": "2bca6457112c56366184ec41efd448dcb253cb3a2f78f49a406f88d96df34f6b"
+    },
+    {
+      "fileName": "part-005.bin",
+      "sizeBytes": 4194304,
+      "sha256": "33291e6a7b8acb2494c24e5818dcdf2a35beeb28d3c9b4b9cab042dac2a7285f"
+    },
+    {
+      "fileName": "part-006.bin",
+      "sizeBytes": 4194304,
+      "sha256": "9daa76ff0c2292a087db308176cecaf9b6d4999f2572a0850e1529fffdbd6b7e"
+    },
+    {
+      "fileName": "part-007.bin",
+      "sizeBytes": 4194304,
+      "sha256": "d8b6339d110b9329c5e1d803de10d1a0463e2bb6fe11a4d675394f407476fdbd"
+    },
+    {
+      "fileName": "part-008.bin",
+      "sizeBytes": 4194304,
+      "sha256": "d475afb4070985f62f8b01be0ba0e6a116de12c4c31ae8a0f79b0e3584f4b884"
+    },
+    {
+      "fileName": "part-009.bin",
+      "sizeBytes": 4194304,
+      "sha256": "80e7bb3acf4c5c8c3b8986da87c03c1709a3cea24a8f65a402898d5c90c28a29"
+    },
+    {
+      "fileName": "part-010.bin",
+      "sizeBytes": 4194304,
+      "sha256": "148a3591362861b77aa503e9326aeece5fcdd6d4b80fd185a6532de9341bf1fa"
+    },
+    {
+      "fileName": "part-011.bin",
+      "sizeBytes": 4194304,
+      "sha256": "2eda0baf79f4b8f5d53c2011042c9cc7abc93ef6f3b9cb111a0b0e017bc09ad3"
+    },
+    {
+      "fileName": "part-012.bin",
+      "sizeBytes": 4194304,
+      "sha256": "312de7a10ed58c6081ef0b0b71a9fad5342adf2d4146485af902f4350b1780c4"
+    },
+    {
+      "fileName": "part-013.bin",
+      "sizeBytes": 4194304,
+      "sha256": "28eb6aac274b5869158f10a479b14201da6aae3f92e4590ee60567a09436f689"
+    },
+    {
+      "fileName": "part-014.bin",
+      "sizeBytes": 4194304,
+      "sha256": "a1bbf595aec4ab185b3acca98525020b257f1646d961c43b1a4cb4b056585a6a"
+    },
+    {
+      "fileName": "part-015.bin",
+      "sizeBytes": 4194304,
+      "sha256": "ed5a54b0b12e34ab9d1fa323602bfddee6f9a6a999b9f15648655dd8dd7a2f84"
+    },
+    {
+      "fileName": "part-016.bin",
+      "sizeBytes": 4194304,
+      "sha256": "66a8686201b70881ee22981357665a3d8b3f0410036bd13d9d6ad0048988ba8c"
+    },
+    {
+      "fileName": "part-017.bin",
+      "sizeBytes": 4194304,
+      "sha256": "57c7fe34dbf8438367c889ccd7c52a318c71b511ce7eb857c086c571c36325e7"
+    },
+    {
+      "fileName": "part-018.bin",
+      "sizeBytes": 4194304,
+      "sha256": "00b4824747a30992b07a2da78f243ce276f904c1a6332e2a60287f9e4e70afc8"
+    },
+    {
+      "fileName": "part-019.bin",
+      "sizeBytes": 4194304,
+      "sha256": "5c8e6a4928000e0c2b5c967f0df51ae1d3d76f521cdf628dabfe393f919aec61"
+    },
+    {
+      "fileName": "part-020.bin",
+      "sizeBytes": 4194304,
+      "sha256": "8953942e70ddb5c5a201e4aad0ecb3de29c163c508da1c07fb42e22a4c6af72a"
+    },
+    {
+      "fileName": "part-021.bin",
+      "sizeBytes": 4194304,
+      "sha256": "0fe3194e75a60f5778cde18ef316ac9f78c4b8ec5736491e64a2b73dfaa4d570"
+    },
+    {
+      "fileName": "part-022.bin",
+      "sizeBytes": 4194304,
+      "sha256": "d60108f53d8abe8dc970225c858308c3971faf18404c3c7d5238756ee3e3100b"
+    },
+    {
+      "fileName": "part-023.bin",
+      "sizeBytes": 3433105,
+      "sha256": "7f02b2bde861e94491af5934de1af27d9759fb4ad7da4549a35eb171967a43dd"
+    }
+  ]
+}

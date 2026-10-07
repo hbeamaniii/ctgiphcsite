@@ -1,5 +1,23 @@
-// Add a resource here and its PDF in public/notes/. List new resources first.
+// Add PDFs in public/notes/ and optional recordings in public/videos/.
+// List new resources first.
 export const bibleStudyResources = [
+  {
+    id: "bible-study-lesson-1",
+    title: "Bible Study Lesson 1",
+    category: "Reading Scripture in context",
+    description:
+      "Watch the lesson and follow along with notes on the Bible's major sections and the historical, cultural, and social setting of a passage.",
+    fileName: "Bible_Study_Lesson_1.pdf",
+    pageCount: 2,
+    sizeBytes: 71228,
+    available: true,
+    video: {
+      fileName: "Bible_Study_Lesson_1.mp4",
+      posterFileName: "Bible_Study_Lesson_1.svg",
+      duration: "45 min 24 sec",
+      sizeBytes: 99902097,
+    },
+  },
   {
     id: "bible-organization",
     title: "How the Bible Is Organized",

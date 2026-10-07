@@ -1,7 +1,8 @@
 # Christ Temple GIPHC website
 
 React, Vite, Tailwind CSS, and React Router power the church website. PDF study
-guides are served directly from `public/notes/`; the Bible study page needs no
+guides are served directly from `public/notes/` and lesson recordings from
+`public/videos/`; the Bible study page needs no
 API key, database, or separate storage service.
 
 ## Work on the Bible study page
@@ -22,7 +23,8 @@ npm run build:bible-study
 npm run preview
 ```
 
-This produces a notes-only production build in `dist/`, including the PDFs.
+This produces a Bible-study-only production build in `dist/`, including the
+PDFs and lesson recordings.
 
 ## Work on the full church website
 
@@ -48,10 +50,43 @@ private `.env` files.
    `npm run build:bible-study`.
 4. Commit the page data and PDF, then push `bible-study`.
 
-The initial resources are the Bible Organization Study Guide and Biblical
-Criticism Quick Reference. They are listed without lesson dates because dates
-have not yet been assigned to them. Both original PDFs are included in
-`public/notes/` and available through the View and Download links.
+The current resources are Bible Study Lesson 1, the Bible Organization Study
+Guide, and Biblical Criticism Quick Reference. They are listed without lesson
+dates because dates have not yet been assigned to them. Their PDFs are included
+in `public/notes/` and available through the View and Download links.
+
+## Add a lesson recording
+
+1. Put the MP4 and a poster image in `public/videos/`. Use filenames without
+   spaces. The current lesson uses H.264 video and AAC audio.
+2. Add an optional `video` object to its existing entry in
+   `src/data/bibleStudyResources.js`, with `fileName`, `posterFileName`,
+   `duration` (a readable label), and `sizeBytes`. This shows a video player and
+   a Download video link alongside the lesson PDF. Resources without `video`
+   continue to show PDF links only.
+3. Check playback, seeking, and the download, then build and push `bible-study`.
+
+The player loads the poster first and waits until the viewer presses Play to
+request the recording. The supplied Lesson 1 recording is 99,902,097 bytes and
+45 minutes 24 seconds long. Its original bytes are preserved.
+
+The GitHub upload API rejected this recording as a single blob. Its source is
+stored in `media/bible-study/lesson-1/` as 24 smaller binary parts and a manifest.
+The development and build scripts automatically run `prepare:study-media` to
+reconstruct `public/videos/Bible_Study_Lesson_1.mp4`. Each part and the complete
+recording are checked against their SHA-256 hashes; a missing or altered part
+stops the build. The generated MP4 is ignored by Git. The parts stay outside
+`public/`, so the deployed website serves one MP4 without duplicate parts.
+
+When replacing this recording, update its parts and manifest together. Run
+`npm run prepare:study-media` to verify them before committing. A fresh checkout
+does not contain the generated MP4 until a development or build command runs.
+
+GitHub's browser uploader accepts files up to 25 MiB; larger recordings need a
+normal Git push. Regular Git files must not exceed 100 MiB. For a growing weekly
+archive, use the church's YouTube channel or separate media storage and adapt
+the page to embed those recordings rather than accumulating large MP4s in Git.
+See [GitHub's file limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
 
 ## Deploy the notes branch to Amplify
 
@@ -66,11 +101,15 @@ have not yet been assigned to them. Both original PDFs are included in
    redirects, and replace conflicting catch-all rules instead of appending
    a second SPA rule beneath them. Amplify app rewrite rules can affect both
    branches.
-3. The supplied rule excludes `pdf`, along with JavaScript, CSS, images, and
-   other static file types. This lets `/notes/*.pdf` return real PDFs instead
-   of the React HTML page. A missing PDF should remain a 404.
+3. The supplied rule excludes `pdf` and `mp4`, along with JavaScript, CSS, images,
+   and other static file types. This lets `/notes/*.pdf` and `/videos/*.mp4`
+   return the actual files instead of the React HTML page. If the console rule
+   was copied before recordings were added, update it to include `mp4`; pushing
+   this JSON reference does not update the console. Missing files should remain
+   a 404.
 4. Test the branch's Amplify URL: `/`, `/biblestudy`, a refresh on
-   `/biblestudy`, both View links, and both downloads. Opening `/leadership`
+   `/biblestudy`, all View and Download links, and video playback and seeking.
+   Opening `/leadership`
    in this build should take you to the study page.
 5. When ready to publish, map `christtemplegiphc.com` to the **bible-study**
    branch in Amplify's custom domain settings. Route 53 manages the domain.

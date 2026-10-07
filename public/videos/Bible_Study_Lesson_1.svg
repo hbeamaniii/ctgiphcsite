@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title description">
+  <title id="title">Bible Study Lesson 1</title>
+  <desc id="description">Reading Scripture in context, Christ Temple GIPHC.</desc>
+  <rect width="1280" height="720" fill="#0a1826" />
+  <circle cx="1140" cy="140" r="340" fill="#5d87a1" opacity=".12" />
+  <circle cx="1190" cy="760" r="420" fill="#d5e4f2" opacity=".05" />
+  <rect x="96" y="150" width="80" height="8" rx="4" fill="#c8a96b" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="96" y="216" font-size="24" letter-spacing="4" fill="#d5e4f2">CHRIST TEMPLE GIPHC</text>
+    <text x="96" y="330" font-size="72" font-weight="600" fill="#fff">Bible Study</text>
+    <text x="96" y="426" font-size="72" font-weight="600" fill="#fff">Lesson 1</text>
+    <text x="96" y="496" font-size="30" fill="#d5e4f2">Reading Scripture in context</text>
+    <text x="96" y="582" font-size="22" fill="#c8a96b">45 min 24 sec</text>
+  </g>
+  <circle cx="1048" cy="366" r="86" fill="#c8a96b" />
+  <path d="M1028 321 1093 366 1028 411Z" fill="#0a1826" />
+</svg>

@@ -24,7 +24,7 @@ function DownloadIcon() {
 function BibleStudy() {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "Bible Study Notes | Christ Temple GIPHC";
+    document.title = "Bible Study | Christ Temple GIPHC";
     return () => {
       document.title = previousTitle;
     };
@@ -40,11 +40,11 @@ function BibleStudy() {
           id="bible-study-title"
           className="mt-4 text-3xl font-semibold md:text-5xl"
         >
-          Bible study notes
+          Bible study
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700">
-          Follow along, revisit a lesson, and keep studying throughout the
-          week with guides for class and personal study.
+          Watch a lesson, follow along with the notes, and keep studying
+          throughout the week with guides for class and personal study.
         </p>
       </section>
 
@@ -56,7 +56,7 @@ function BibleStudy() {
       >
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <h2 id="study-resources-title" className="text-2xl font-semibold">
-            Study guides
+            Lessons and study guides
           </h2>
           <p className="text-sm text-slate-500">
             {bibleStudyResources.length}{" "}
@@ -67,9 +67,15 @@ function BibleStudy() {
         <ul className="grid gap-8 md:grid-cols-2">
           {bibleStudyResources.map((resource) => {
             const pdfUrl = `/notes/${resource.fileName}`;
+            const videoUrl = resource.video
+              ? "/videos/" + resource.video.fileName
+              : null;
 
             return (
-              <li key={resource.id} className="flex">
+              <li
+                key={resource.id}
+                className={resource.video ? "flex md:col-span-2" : "flex"}
+              >
                 <article
                   aria-labelledby={`${resource.id}-title`}
                   className="flex w-full flex-col rounded-3xl bg-white p-8 shadow-lg"
@@ -90,6 +96,27 @@ function BibleStudy() {
                   <p className="mb-6 mt-4 text-sm leading-7 text-slate-600">
                     {resource.description}
                   </p>
+
+                  {resource.video && (
+                    <figure className="mb-8">
+                      <video
+                        controls
+                        playsInline
+                        preload="none"
+                        poster={"/videos/" + resource.video.posterFileName}
+                        aria-label={resource.title + " video"}
+                        className="aspect-video w-full rounded-2xl bg-sanctuary"
+                      >
+                        <source src={videoUrl} type="video/mp4" />
+                        Your browser cannot play this video. Use the Download
+                        video link below to watch it on your device.
+                      </video>
+                      <figcaption className="mt-3 text-xs text-slate-500">
+                        {resource.video.duration} ·{" "}
+                        {(resource.video.sizeBytes / 1000000).toFixed(1)} MB
+                      </figcaption>
+                    </figure>
+                  )}
 
                   <div className="mt-auto">
                     <p className="mb-5 text-xs text-slate-500">
@@ -120,6 +147,16 @@ function BibleStudy() {
                         >
                           <DownloadIcon /> Download
                         </a>
+                        {resource.video && (
+                          <a
+                            href={videoUrl}
+                            download={resource.video.fileName}
+                            aria-label={"Download " + resource.title + " video"}
+                            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-sanctuary/20 px-5 py-3 text-sm font-semibold text-sanctuary transition hover:bg-skyglass/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sanctuary"
+                          >
+                            <DownloadIcon /> Download video
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>

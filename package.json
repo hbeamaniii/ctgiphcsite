@@ -4,9 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prepare:study-media": "node scripts/prepare-study-media.mjs",
+    "predev": "npm run prepare:study-media",
     "dev": "vite",
+    "predev:bible-study": "npm run prepare:study-media",
     "dev:bible-study": "vite --mode bible-study",
+    "prebuild": "npm run prepare:study-media",
     "build": "vite build",
+    "prebuild:bible-study": "npm run prepare:study-media",
     "build:bible-study": "vite build --mode bible-study",
     "lint": "eslint .",
     "preview": "vite preview"
