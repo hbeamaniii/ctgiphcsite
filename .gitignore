@@ -15,6 +15,12 @@ dist-ssr
 # Rebuilt from the verified recording parts before development and builds.
 /public/videos/Bible_Study_Lesson_1.mp4
 
+# Built automatically from the weekly lesson list; keep source materials in Git.
+/public/archives/Bible_Study_Week_*.zip
+/public/archives/Bible_Study_Week_*.zip.tmp
+/src/data/bibleStudyArchives.generated.json
+/src/data/bibleStudyArchives.generated.json.tmp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

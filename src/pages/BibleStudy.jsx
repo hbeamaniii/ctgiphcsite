@@ -1,5 +1,9 @@
 import { useEffect } from "react";
-import { bibleStudyResources } from "../data/bibleStudyResources";
+import {
+  bibleStudyArchive,
+  bibleStudyResources,
+  currentBibleStudyWeek,
+} from "../data/bibleStudyResources";
 
 function DownloadIcon() {
   return (
@@ -55,9 +59,14 @@ function BibleStudy() {
         className="mt-16 scroll-mt-6 focus:outline-none"
       >
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <h2 id="study-resources-title" className="text-2xl font-semibold">
-            Lessons and study guides
-          </h2>
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-steeple">
+              Week {currentBibleStudyWeek.week}
+            </p>
+            <h2 id="study-resources-title" className="text-2xl font-semibold">
+              Lessons and study guides
+            </h2>
+          </div>
           <p className="text-sm text-slate-500">
             {bibleStudyResources.length}{" "}
             {bibleStudyResources.length === 1 ? "resource" : "resources"}
@@ -175,6 +184,75 @@ function BibleStudy() {
             </p>
           </aside>
         )}
+      </section>
+
+      <section aria-labelledby="study-archive-title" className="mt-16">
+        <h2 id="study-archive-title" className="text-2xl font-semibold">
+          Previous weeks
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-slate-600">
+          Download a previous week’s video and study materials together in one ZIP file.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-3xl border border-sanctuary/10 bg-white shadow-sm">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">
+              Previous Bible study weeks and complete lesson downloads
+            </caption>
+            <thead className="bg-sanctuary text-white">
+              <tr>
+                <th scope="col" className="whitespace-nowrap px-5 py-4 font-semibold">
+                  Week
+                </th>
+                <th scope="col" className="px-5 py-4 font-semibold">
+                  Lesson
+                </th>
+                <th scope="col" className="px-5 py-4 font-semibold">
+                  Download
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-sanctuary/10">
+              {bibleStudyArchive.length === 0 ? (
+                <tr>
+                  <td colSpan={3} className="px-5 py-8 leading-7 text-slate-500">
+                    Previous weeks will appear here when the next lesson is posted.
+                  </td>
+                </tr>
+              ) : (
+                bibleStudyArchive.map((week) => (
+                  <tr key={week.week}>
+                    <th scope="row" className="whitespace-nowrap px-5 py-5 align-top font-semibold">
+                      Week {week.week}
+                    </th>
+                    <td className="px-5 py-5 align-top leading-7 text-slate-600">
+                      {week.title}
+                    </td>
+                    <td className="px-5 py-5 align-top">
+                      {week.download ? (
+                        <>
+                          <a
+                            href={"/archives/" + week.download.fileName}
+                            download={week.download.fileName}
+                            aria-label={"Download all Week " + week.week + " lesson materials (ZIP)"}
+                            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-bronze px-5 py-3 font-semibold text-sanctuary transition hover:brightness-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sanctuary"
+                          >
+                            <DownloadIcon /> Download ZIP
+                          </a>
+                          <p className="mt-2 text-xs text-slate-500">
+                            ZIP · {(week.download.sizeBytes / 1000000).toFixed(1)} MB
+                          </p>
+                        </>
+                      ) : (
+                        <p className="leading-7 text-slate-500">Download coming soon</p>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );

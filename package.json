@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "prepare:study-media": "node scripts/prepare-study-media.mjs",
-    "predev": "npm run prepare:study-media",
+    "prepare:study-archives": "node scripts/prepare-study-archives.mjs",
+    "prepare:study-content": "npm run prepare:study-media && npm run prepare:study-archives",
+    "predev": "npm run prepare:study-content",
     "dev": "vite",
-    "predev:bible-study": "npm run prepare:study-media",
+    "predev:bible-study": "npm run prepare:study-content",
     "dev:bible-study": "vite --mode bible-study",
-    "prebuild": "npm run prepare:study-media",
+    "prebuild": "npm run prepare:study-content",
     "build": "vite build",
-    "prebuild:bible-study": "npm run prepare:study-media",
+    "prebuild:bible-study": "npm run prepare:study-content",
     "build:bible-study": "vite build --mode bible-study",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -32,6 +34,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
-    "vite": "^8.1.1"
+    "vite": "^8.1.1",
+    "yazl": "^3.3.1"
   }
 }

@@ -1,43 +1,19 @@
-// Add PDFs in public/notes/ and optional recordings in public/videos/.
-// List new resources first.
-export const bibleStudyResources = [
-  {
-    id: "bible-study-lesson-1",
-    title: "Bible Study Lesson 1",
-    category: "Reading Scripture in context",
-    description:
-      "Watch the lesson and follow along with notes on the Bible's major sections and the historical, cultural, and social setting of a passage.",
-    fileName: "Bible_Study_Lesson_1.pdf",
-    pageCount: 2,
-    sizeBytes: 71228,
-    available: true,
-    video: {
-      fileName: "Bible_Study_Lesson_1.mp4",
-      posterFileName: "Bible_Study_Lesson_1.svg",
-      duration: "45 min 24 sec",
-      sizeBytes: 99902097,
-    },
-  },
-  {
-    id: "bible-organization",
-    title: "How the Bible Is Organized",
-    category: "Bible foundations",
-    description:
-      "Find your way through the Bible's major divisions, from the Pentateuch and wisdom literature to the Gospels, letters, and Revelation. Includes a complete book map.",
-    fileName: "Bible_Organization_Study_Guide.pdf",
-    pageCount: 4,
-    sizeBytes: 153195,
-    available: true,
-  },
-  {
-    id: "biblical-criticism",
-    title: "Biblical Criticism: A Quick Reference",
-    category: "Reading Scripture in context",
-    description:
-      "A light overview of the methods used to study Scripture, including textual, historical, and redaction criticism, with practical questions about the speaker, audience, and culture.",
-    fileName: "Biblical_Criticism_Quick_Reference.pdf",
-    pageCount: 3,
-    sizeBytes: 112373,
-    available: true,
-  },
-];
+import studyWeeks from "./bibleStudyWeeks.json";
+import archiveFiles from "./bibleStudyArchives.generated.json";
+
+// Update the week list and currentWeek in bibleStudyWeeks.json.
+// ZIP files and their sizes are prepared automatically before dev and builds.
+export const currentBibleStudyWeek = studyWeeks.weeks.find(
+  (week) => week.week === studyWeeks.currentWeek,
+);
+
+export const bibleStudyResources = currentBibleStudyWeek.resources;
+
+export const bibleStudyArchive = studyWeeks.weeks
+  .filter((week) => week.week < studyWeeks.currentWeek)
+  .sort((a, b) => b.week - a.week)
+  .map((week) => ({
+    week: week.week,
+    title: week.title,
+    download: archiveFiles[week.week] ?? null,
+  }));

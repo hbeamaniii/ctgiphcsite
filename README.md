@@ -38,14 +38,47 @@ and a Bible Study navigation link. The calendar and media integrations still
 use their existing local or Amplify environment variables. Do not commit
 private `.env` files.
 
+## Publish the next week
+
+The current week keeps the large video player and individual PDF links. The
+**Previous weeks** table below it lists older lessons, newest first, with one
+ZIP download per week and the actual download size. Week 1 stays featured until
+Week 2 is ready; the archive table is empty in the meantime.
+
+1. Add the new week's PDF files and recording using the instructions below.
+2. In `src/data/bibleStudyWeeks.json`, add an object to `weeks` with its `week`
+   number, lesson `title`, and `resources`. Use Week 1 as the format, with the
+   new week's own resource IDs, filenames, and file metadata. Keep all older
+   week entries and their source materials.
+3. Set `currentWeek` to the new week's number once its materials are ready.
+   This selects the featured lesson and moves earlier weeks into the table.
+4. Restart `npm run dev:bible-study`, check the current lesson and an archive
+   download, then run `npm run build:bible-study`.
+5. Commit the lesson list and source materials, then push `bible-study`.
+
+The development and build commands prepare ZIP files automatically in
+`public/archives/` and record their sizes in
+`src/data/bibleStudyArchives.generated.json`. These generated files are ignored
+by Git; a fresh checkout rebuilds them. The ZIP includes every available PDF
+and recording listed for that week, inside a `Week_N` folder. A missing file,
+incorrect size, duplicate filename, or unfinished archived resource stops
+preparation instead of publishing an incomplete download. Draft week entries
+above `currentWeek` are not shown or archived.
+
+When Week 2 is published, the Week 1 ZIP will contain its recording and all
+three PDFs. Videos are already compressed, so putting one into a ZIP mainly
+bundles the materials; it does not make the recording much smaller.
+
 ## Add or update study notes
 
 1. Put a PDF in `public/notes/`. Use a filename without spaces.
-2. Add an entry to `src/data/bibleStudyResources.js` with a unique `id`, title,
-   category, description, exact `fileName`, page count, and file size in bytes.
-   Put new resources at the top of the list. Update the metadata when replacing
-   an existing file. Set `available: false` to list a guide whose PDF is not
-   ready yet; remove that flag or set it to `true` after adding its PDF.
+2. Add an entry to the week's `resources` in `src/data/bibleStudyWeeks.json`
+   with a unique `id`, title, category, description, exact `fileName`, page
+   count, and file size in bytes. Put new resources at the top of that week's
+   list. Update the metadata when replacing an existing file. Set
+   `available: false` to list a guide whose PDF is not
+   ready yet; remove that flag or set it to `true` after adding its PDF. Finish
+   all resources before moving that week into the archive.
 3. Run `npm run dev:bible-study`, check both View and Download links, and run
    `npm run build:bible-study`.
 4. Commit the page data and PDF, then push `bible-study`.
@@ -59,8 +92,8 @@ in `public/notes/` and available through the View and Download links.
 
 1. Put the MP4 and a poster image in `public/videos/`. Use filenames without
    spaces. The current lesson uses H.264 video and AAC audio.
-2. Add an optional `video` object to its existing entry in
-   `src/data/bibleStudyResources.js`, with `fileName`, `posterFileName`,
+2. Add an optional `video` object to its entry in the week's `resources` in
+   `src/data/bibleStudyWeeks.json`, with `fileName`, `posterFileName`,
    `duration` (a readable label), and `sizeBytes`. This shows a video player and
    a Download video link alongside the lesson PDF. Resources without `video`
    continue to show PDF links only.
@@ -101,14 +134,16 @@ See [GitHub's file limits](https://docs.github.com/en/repositories/working-with-
    redirects, and replace conflicting catch-all rules instead of appending
    a second SPA rule beneath them. Amplify app rewrite rules can affect both
    branches.
-3. The supplied rule excludes `pdf` and `mp4`, along with JavaScript, CSS, images,
-   and other static file types. This lets `/notes/*.pdf` and `/videos/*.mp4`
-   return the actual files instead of the React HTML page. If the console rule
-   was copied before recordings were added, update it to include `mp4`; pushing
-   this JSON reference does not update the console. Missing files should remain
-   a 404.
+3. The supplied rule excludes `pdf`, `mp4`, and `zip`, along with JavaScript, CSS,
+   images, and other static file types. This lets `/notes/*.pdf`, `/videos/*.mp4`,
+   and `/archives/*.zip` return the actual files instead of the React HTML
+   page. If the console rule
+   was copied before recordings or archives were added, update it to include
+   `mp4` and `zip`; pushing this JSON reference does not update the console.
+   Missing files should remain a 404.
 4. Test the branch's Amplify URL: `/`, `/biblestudy`, a refresh on
-   `/biblestudy`, all View and Download links, and video playback and seeking.
+   `/biblestudy`, all View and Download links, an archive ZIP download, and video
+   playback and seeking.
    Opening `/leadership`
    in this build should take you to the study page.
 5. When ready to publish, map `christtemplegiphc.com` to the **bible-study**
