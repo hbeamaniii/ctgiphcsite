@@ -175,15 +175,6 @@ function BibleStudy() {
           })}
         </ul>
 
-        {bibleStudyResources.some((resource) => resource.available !== false) && (
-          <aside className="mt-12 rounded-[2rem] bg-sanctuary p-8 text-white shadow-lg">
-            <h3 className="text-xl font-semibold">Keep a copy for the week</h3>
-            <p className="mt-4 text-sm leading-7 text-white/90">
-              Download a guide to read on your phone, print for class, or return
-              to during your personal study. These resources are free to access.
-            </p>
-          </aside>
-        )}
       </section>
 
       <section aria-labelledby="study-archive-title" className="mt-16">
