@@ -128,6 +128,9 @@ function BibleStudy() {
                   )}
 
                   <div className="mt-auto">
+                    <h4 className="mb-3 text-base font-semibold text-sanctuary">
+                      This week’s notes — Lesson {currentBibleStudyWeek.week}
+                    </h4>
                     <p className="mb-5 text-xs text-slate-500">
                       PDF · {resource.pageCount}{" "}
                       {resource.pageCount === 1 ? "page" : "pages"} ·{" "}
