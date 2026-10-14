@@ -1,5 +1,5 @@
 {
-  "currentWeek": 1,
+  "currentWeek": 2,
   "weeks": [
     {
       "week": 1,
@@ -40,6 +40,28 @@
           "pageCount": 3,
           "sizeBytes": 112373,
           "available": true
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "title": "Order, image, and rest",
+      "resources": [
+        {
+          "id": "bible-study-lesson-2",
+          "title": "Bible Study Lesson 2: Order, Image, and Rest",
+          "category": "Order, image, and rest",
+          "description": "Watch Lesson 2 on creation, the image of God, and rest, and follow along with notes on the Bible's major sections and the book of Genesis.",
+          "fileName": "Bible_Study_Lesson_2.pdf",
+          "pageCount": 4,
+          "sizeBytes": 112075,
+          "available": true,
+          "video": {
+            "fileName": "Bible_Study_Lesson_2.mp4",
+            "posterFileName": "Bible_Study_Lesson_2.svg",
+            "duration": "1 hr 3 min 52 sec",
+            "sizeBytes": 106649003
+          }
         }
       ]
     }
