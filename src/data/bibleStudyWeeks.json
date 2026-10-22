@@ -1,5 +1,5 @@
 {
-  "currentWeek": 2,
+  "currentWeek": 3,
   "weeks": [
     {
       "week": 1,
@@ -61,6 +61,28 @@
             "posterFileName": "Bible_Study_Lesson_2.svg",
             "duration": "1 hr 3 min 52 sec",
             "sizeBytes": 106649003
+          }
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "title": "Order, Image, Rest part 2",
+      "resources": [
+        {
+          "id": "bible-study-lesson-3",
+          "title": "Bible Study Lesson 3: Order, Image, Rest part 2",
+          "category": "Order, Image, Rest part 2",
+          "description": "Continue the Genesis study on creation, the image of God, responsibility, and rest, with application questions on how we treat one another and how God addresses corruption.",
+          "fileName": "Bible_Study_Lesson_3.pdf",
+          "pageCount": 1,
+          "sizeBytes": 26879,
+          "available": true,
+          "video": {
+            "fileName": "Bible_Study_Lesson_3.mp4",
+            "posterFileName": "Bible_Study_Lesson_3.svg",
+            "duration": "48 min 58 sec",
+            "sizeBytes": 46636056
           }
         }
       ]

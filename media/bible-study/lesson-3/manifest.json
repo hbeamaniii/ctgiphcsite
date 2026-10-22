@@ -1,0 +1,67 @@
+{
+  "fileName": "Bible_Study_Lesson_3.mp4",
+  "sizeBytes": 46636056,
+  "sha256": "3f38feba659abd296c7ec11f683090f4436aac2ab1539d3b887bf4d738f83fee",
+  "parts": [
+    {
+      "fileName": "part-000.bin",
+      "sizeBytes": 4194304,
+      "sha256": "56ae3f77539257e2428c47c778ae3caf179f1fbf29dfd8ef1c46294dea9c8a45"
+    },
+    {
+      "fileName": "part-001.bin",
+      "sizeBytes": 4194304,
+      "sha256": "beb7b4a6219b2a8a8a3de7ac057cfc6ca173ed7f2cc6589f72029fe0257a8d87"
+    },
+    {
+      "fileName": "part-002.bin",
+      "sizeBytes": 4194304,
+      "sha256": "24d8f259fa2825a9494f22545bcff17d201c7ec8e0ff603bb420466a3d5fd471"
+    },
+    {
+      "fileName": "part-003.bin",
+      "sizeBytes": 4194304,
+      "sha256": "c162e0e63e960ea81e0dcd891441ba22240895ba57b27debf099575d8eef6c5a"
+    },
+    {
+      "fileName": "part-004.bin",
+      "sizeBytes": 4194304,
+      "sha256": "a1fe35d8113bcb59d1144662585b251c3979056177368241d02669f7b61fd926"
+    },
+    {
+      "fileName": "part-005.bin",
+      "sizeBytes": 4194304,
+      "sha256": "12f74b83d9bc3f31b9a2e772f453c8ce7ed9473ae4fb28114046ce672f5af71f"
+    },
+    {
+      "fileName": "part-006.bin",
+      "sizeBytes": 4194304,
+      "sha256": "b75a0ece25dc04c14106a5784e46dcb8b0f48b1c55061981313860644021e319"
+    },
+    {
+      "fileName": "part-007.bin",
+      "sizeBytes": 4194304,
+      "sha256": "9c64f8a0e2354c1bf7f36c29a2b186c3db97ac468a5d62af067459a50dfe53ef"
+    },
+    {
+      "fileName": "part-008.bin",
+      "sizeBytes": 4194304,
+      "sha256": "014c0265b358c65d13ea10f4a26031d60deebde5a10da9681bd137f582b44e00"
+    },
+    {
+      "fileName": "part-009.bin",
+      "sizeBytes": 4194304,
+      "sha256": "a15482ab970780a7cedb5af7260db4e26a2e3547c02521bc8972120bbf967870"
+    },
+    {
+      "fileName": "part-010.bin",
+      "sizeBytes": 4194304,
+      "sha256": "3f279f148102b9504d97177b86cf7428b44908465143074a9dd21e5f9816d374"
+    },
+    {
+      "fileName": "part-011.bin",
+      "sizeBytes": 498712,
+      "sha256": "315a332ed1f9d50521d3451a60a84e64625e311d9c1528d6bed2d5a07ffdf36c"
+    }
+  ]
+}
