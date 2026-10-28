@@ -1,8 +1,8 @@
 const ministryTeam = [
-  { name: "MIT Natasha Haynes", image: "/images/natasha.jpg", title: "Minister in Training" },
   { name: "Elder Pete Lovell", image: "/images/pete.jpg", title: "Elder" },
-  { name: "MIT Howard Beaman III", image: "/images/howard.jpg", title: "Minister in Training" },
   { name: "Minister Ransford Fraser", image: "/images/ransford.jpg", title: "Minister" },
+  { name: "MIT Natasha Haynes", image: "/images/natasha.jpg", title: "Minister in Training" },
+  { name: "MIT Howard Beaman III", image: "/images/howard.jpg", title: "Minister in Training" },
 ];
 
 function Leadership() {
