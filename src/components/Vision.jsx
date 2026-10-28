@@ -9,14 +9,14 @@ function Vision() {
           Our Vision
         </h2>
         <p className="mt-6 text-base leading-8 text-slate-700">
-          The vision of Christ Temple GIPHC, Inc. is to follow the steps that
-          are ordained by God for spiritual empowerment. Therefore, this
-          ministry shall continually focus on ongoing leadership development,
-          staff development, personal training and development that will enable
-          each member of the body of Christ to reach and effectively change the
-          world for Christ centered worship in the kingdom of God. Because "the
-          steps of a good man are ordered by the Lord and he delighteth in his
-          way." Psalm 37:23.
+          You are invited to experience Christ Temple, a beacon of light,
+          faith, and service in the Greenburgh community and beyond. Rooted
+          in a proud history and strengthened through seasons of change, we
+          remain committed to preaching and teaching the Gospel of Jesus
+          Christ, equipping the saints for ministry, and drawing souls into
+          the Kingdom of God. With love, devotion, and the power of the Holy
+          Ghost, we continue the work of God and the purpose He has given
+          to this house.
         </p>
       </div>
 
