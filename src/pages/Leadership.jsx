@@ -50,6 +50,11 @@ function Leadership() {
                 {minister.title}
               </p>
               <h3 className="mt-2 text-lg font-semibold">{minister.name}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </p>
             </article>
           ))}
         </div>
