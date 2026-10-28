@@ -16,6 +16,7 @@ dist-ssr
 /public/videos/Bible_Study_Lesson_1.mp4
 /public/videos/Bible_Study_Lesson_2.mp4
 /public/videos/Bible_Study_Lesson_3.mp4
+/public/videos/*.mp4
 
 # Built automatically from the weekly lesson list; keep source materials in Git.
 /public/archives/Bible_Study_Week_*.zip

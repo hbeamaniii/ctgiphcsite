@@ -44,9 +44,22 @@ function Leadership() {
               Elder Carla Brice-Talley
             </h2>
             <p className="mt-4 text-sm leading-7 text-white/80">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              Pastor Carla Brice-Talley is a devoted woman of God, published
+              author, gifted teacher of the Word, and inspiring leader. Born in
+              Charlotte, North Carolina, she joined Christ Temple, GIPHC, in
+              2001 after graduate school and has served in several ministries,
+              including Sunday School and the Praise Team. She also draws on her
+              experience as a business executive with a Fortune 100 corporation
+              to provide valuable counsel on church operations. Pastor Carla
+              preached her initial sermon at Christ Temple in November 2013,
+              following years of ministerial and leadership service at her home
+              church in North Carolina. Committed to spiritual growth and
+              biblical truth, she is excited to lead Christ Temple during this
+              pivotal season and help guide the church toward its 100th
+              anniversary. She believes the Church is a powerful institution
+              uniquely positioned to transform lives and communities through the
+              Gospel. She is married to Darren Talley, and they have three
+              children: Darien Alexis, Brice Adam, and Zoe Catherine.
             </p>
           </div>
         </div>

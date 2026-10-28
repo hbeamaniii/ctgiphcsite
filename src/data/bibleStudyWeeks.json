@@ -1,5 +1,5 @@
 {
-  "currentWeek": 3,
+  "currentWeek": 4,
   "weeks": [
     {
       "week": 1,
@@ -95,11 +95,17 @@
           "id": "bible-study-lesson-4",
           "title": "Bible Study Lesson 4: Human Flourishing",
           "category": "Human Flourishing",
-          "description": "Explore Genesis 2 and the foundations of human flourishing: God's presence, purpose and productivity, abundance, rest and security, and community.",
+          "description": "Explore Genesis 2 and the foundations of human flourishing: God’s presence, purpose and productivity, abundance, rest and security, and community.",
           "fileName": "Bible_Study_Lesson_4.pdf",
           "pageCount": 2,
           "sizeBytes": 62570,
-          "available": false
+          "available": true,
+          "video": {
+            "fileName": "Bible_Study_Lesson_4.mp4",
+            "posterFileName": "Bible_Study_Lesson_4.svg",
+            "duration": "57 min 27 sec",
+            "sizeBytes": 146271286
+          }
         }
       ]
     }

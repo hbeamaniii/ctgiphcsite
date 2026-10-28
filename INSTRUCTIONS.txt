@@ -1,0 +1,20 @@
+WEEK 4 — HUMAN FLOURISHING
+
+1. Open a terminal in your existing ctgiphcsite checkout.
+2. Make sure you are on bible-study and have pulled the latest changes:
+   git switch bible-study
+   git pull origin bible-study
+3. Extract THIS ZIP into the repository root, preserving folders. This adds
+   public/notes, public/videos, and media/bible-study/lesson-4.
+   Place apply-week4.mjs in the repository root as well.
+4. Execute:
+   node apply-week4.mjs
+   npm run build:bible-study
+5. Review the build, then:
+   git add src/data/bibleStudyWeeks.json public/notes/Bible_Study_Lesson_4.pdf public/videos/Bible_Study_Lesson_4.svg media/bible-study/lesson-4
+   git commit -m "Publish Bible Study Week 4 — Human Flourishing"
+   git push origin bible-study
+
+IMPORTANT: Do not add public/videos/Bible_Study_Lesson_4.mp4 to Git.
+The build script reconstructs the video automatically from the verified parts.
+There are 35 binary parts; this is expected. Avoid pushing until the build succeeds.
